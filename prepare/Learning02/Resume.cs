@@ -6,7 +6,7 @@ public class Resume
 
     // Create the list to store the job descriptions
     public List<Job> _jobs = new List<Job>();
-
+    
     public void DisplayResume()
     {
         Console.WriteLine($"{_name}");
