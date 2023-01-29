@@ -1,5 +1,5 @@
 using System;
-
+using System.IO;
 public class Journal
 {
     // List needed variables here
@@ -38,11 +38,24 @@ public class Journal
 
     public void SaveToFile()
     {
+        Console.WriteLine("What is the filename?");
+        string fileName = Console.ReadLine();
 
+        using (StreamWriter savedFile = new StreamWriter(fileName))
+        {
+            foreach (Entry entry in _entries)
+            {
+                savedFile.WriteLine(entry);
+            }
+        }
     }
 
     public void LoadFromFile()
     {
+        Console.WriteLine("What is the filename?");
+        string fileName = Console.ReadLine();
+
+        string[] lines = System.IO.File.ReadAllLines(fileName);
 
     }
 }

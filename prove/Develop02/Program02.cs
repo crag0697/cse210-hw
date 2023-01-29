@@ -1,5 +1,5 @@
 using System;
-
+using System.IO;
 class Program
 {
     static void Main(string[] args)
@@ -34,12 +34,12 @@ class Program
 
             else if (choice == 3)
             {
-                Console.WriteLine("Load");
+                Journal.LoadFromFile();
             }
 
             else if (choice == 4)
             {
-                Console.WriteLine("Save");
+                Journal.SaveToFile();
             }
         }
         while (choice != 5);
