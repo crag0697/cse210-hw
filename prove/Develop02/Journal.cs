@@ -9,27 +9,30 @@ public class Journal
     
 
     // List needed functions here
-    public void AddEntry()
+    public Entry AddEntry()
     {
         PromptGenerator prompts = new PromptGenerator();
-        prompts.CompilePromptList();
-        Journal newJournal = new Journal();
+        prompts._prompts.Add(prompts.prompt1);
+        prompts._prompts.Add(prompts.prompt2);
+        prompts._prompts.Add(prompts.prompt3);
+        prompts._prompts.Add(prompts.prompt4);
+        prompts._prompts.Add(prompts.prompt5);
+
         Entry newEntry = new Entry();
     
-        string question = prompts.GeneratePrompt();
-        Console.WriteLine(question);
+        newEntry._prompt = prompts.GeneratePrompt();
+        Console.WriteLine(newEntry._prompt);
         newEntry._response = Console.ReadLine();
         newEntry._date = System.DateTime.Now.ToString("MM.dd.yyyy");
-        
-        newJournal._entries.Add(newEntry);
 
+        return newEntry;
     }
     
     public void DisplayEntries()
     {
         foreach (Entry entry in _entries)
         {
-            entry.Display();
+            entry.DisplayJournalDetails();
         }
     }
 

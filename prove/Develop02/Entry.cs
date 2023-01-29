@@ -9,7 +9,7 @@ public class Entry
     public string _date;
     
     // List needed functions here
-    public void Display()
+    public void DisplayJournalDetails()
     {
         Console.WriteLine($"{_date} - Prompt: {_prompt}");
         Console.WriteLine(_response);

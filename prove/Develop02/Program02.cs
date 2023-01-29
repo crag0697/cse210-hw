@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
+        Journal Journal = new Journal();
+
         Console.WriteLine("Welcome to the Journal Program!");
         int choice = 0;
         do
@@ -20,13 +22,13 @@ class Program
 
             if (choice == 1)
             {
-                Journal Journal = new Journal();
-                Journal.AddEntry();
+                Entry entry = Journal.AddEntry();
+                Journal._entries.Add(entry);
+
             }
 
             else if (choice == 2)
             {
-                Journal Journal = new Journal();
                 Journal.DisplayEntries();
             }
 
