@@ -1,0 +1,21 @@
+using System;
+
+public class Assignment
+{
+    // Variables here
+    protected string _studentName;
+    protected string _topic;
+
+    // Constructors here
+    public Assignment(string studentName, string topic)
+    {
+        _studentName = studentName;
+        _topic = topic;
+    }
+
+    // Methods here
+    public string GetSummary()
+    {
+        return $"{_studentName} - {_topic}";
+    }
+}
