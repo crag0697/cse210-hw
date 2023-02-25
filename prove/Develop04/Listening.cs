@@ -8,7 +8,7 @@ public class Listening : Assignment
     private int _answerTotal;
 
     // Constructor here
-    public Listening(string activityName, string description, int duration) : base(activityName, description, duration)
+    public Listening(string activityName, string description) : base(activityName, description)
     {
 
     }
@@ -19,9 +19,8 @@ public class Listening : Assignment
 
     }
 
-    public string GetPrompt()
+    public void GetPrompt()
     {
-        return prompt;
     }
 
     public void DisplayPrompt()
@@ -29,9 +28,9 @@ public class Listening : Assignment
 
     }
 
-    public string GetAnswer()
+    public void GetAnswer()
     {
-        return answer;
+
     }
 
     public void DisplayTotal()

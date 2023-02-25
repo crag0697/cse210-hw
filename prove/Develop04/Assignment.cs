@@ -5,34 +5,60 @@ public class Assignment
     // Attributes here
     private string _activityName;
     private string _description;
-    private int _duration;
+    protected int _duration;
 
     // Constructor here
-    public Assignment(string activityName, string description, int duration)
+    public Assignment(string activityName, string description)
     {
         _activityName = activityName;
         _description = description;
-        _duration = duration;
     }
 
     // Methods here
     public void DisplayStart()
     {
-
+        Console.WriteLine($"Wlecome to the {_activityName} Activity.");
+        Console.WriteLine();
+        Console.WriteLine($"{_description}");
+        Console.WriteLine();
+        Console.WriteLine("How long, in seconds, would you like for your session? ");
+        _duration = Int32.Parse(Console.ReadLine());
     }
 
     public void DisplayEnd()
     {
-
+        Console.WriteLine("Well done!!");
+        Thread.Sleep(2000);
+        Console.WriteLine($"You have completed {_duration} seconds of the {_activityName} Activity.");
+        Thread.Sleep(3000);
     }
 
     public void SpinPause()
     {
-
+        List<string> loadAnimation = new List<string>();
+        loadAnimation.Add("+");
+        loadAnimation.Add("x");
+        int cycles = 0;
+        while (cycles < 4)
+        {
+            foreach (string s in loadAnimation)
+            {
+                Console.Write(s);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+            }
+            cycles ++;
+        }
     }
 
     public void CountdownPause()
     {
+        for (int i = 4; i > 0; i--)
+        {
+            Console.Write("i");
+            Thread.Sleep(1000);
 
+            Console.Write("\b \b");
+        }
     }
 }

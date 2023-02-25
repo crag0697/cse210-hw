@@ -3,12 +3,12 @@ using System;
 public class Reflecting : Assignment
 {
     // Attributes here
-    private List<string> _prompts;
-    private List<string> _questions;
-    private string _answer;
+    //private List<string> _prompts;
+    //private List<string> _questions;
+    //private string _answer;
 
     // Constructor here
-    public Reflecting(string activityName, string description, int duration) : base(activityName, description, duration)
+    public Reflecting(string activityName, string description) : base(activityName, description)
     {
 
     }
@@ -19,14 +19,14 @@ public class Reflecting : Assignment
 
     }
 
-    public string GetPrompt()
+    public void GetPrompt()
     {
-        return prompt;
+
     }
 
-    public string GetQuestion()
+    public void GetQuestion()
     {
-        return question;
+
     }
 
     public void DisplayPrompt()
@@ -39,8 +39,8 @@ public class Reflecting : Assignment
 
     }
 
-    public string GetAnswer()
+    public void GetAnswer()
     {
-        return answer;
+
     }
 }
