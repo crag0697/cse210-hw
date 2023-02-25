@@ -28,23 +28,29 @@ public class Assignment
     public void DisplayEnd()
     {
         Console.WriteLine("Well done!!");
-        Thread.Sleep(2000);
+        SpinPause();
         Console.WriteLine($"You have completed {_duration} seconds of the {_activityName} Activity.");
-        Thread.Sleep(3000);
+        SpinPause();
     }
 
     public void SpinPause()
     {
         List<string> loadAnimation = new List<string>();
-        loadAnimation.Add("+");
-        loadAnimation.Add("x");
+        loadAnimation.Add("\\");
+        loadAnimation.Add("|");
+        loadAnimation.Add("/");
+        loadAnimation.Add("-");
+        loadAnimation.Add("\\");
+        loadAnimation.Add("|");
+        loadAnimation.Add("/");
+        loadAnimation.Add("|");
         int cycles = 0;
         while (cycles < 4)
         {
             foreach (string s in loadAnimation)
             {
                 Console.Write(s);
-                Thread.Sleep(1000);
+                Thread.Sleep(250);
                 Console.Write("\b \b");
             }
             cycles ++;
@@ -55,7 +61,7 @@ public class Assignment
     {
         for (int i = 4; i > 0; i--)
         {
-            Console.Write("i");
+            Console.Write($"{i}");
             Thread.Sleep(1000);
 
             Console.Write("\b \b");
